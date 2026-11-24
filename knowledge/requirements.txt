@@ -1,0 +1,25 @@
+# CPU 版 PyTorch：从 PyTorch 官方 CPU wheelhouse 安装（Windows 上此源可避免官方 PyPI CPU wheel 的 DLL 加载问题；
+# 且需 2.8+ 才能与当前 transformers 版本兼容）
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.15.0
+torchvision==0.29.2
+
+# 剩下的包会优先匹配你本地配置的默认清华源
+minio
+langchain-openai
+langgraph
+grandalf
+pymilvus[milvus_lite]
+pymilvus[model]
+# Windows 下 pymilvus 的 milvus_lite extra 会被平台标记跳过，显式补装
+milvus-lite==3.2.1
+sentence-transformers
+neo4j
+pymongo
+mineru[all]
+openai-agents
+langchain-deepseek
+langchain-mcp-adapters
+openai
+python-dotenv
+flagembedding
